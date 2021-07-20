@@ -1,7 +1,7 @@
 FROM linuxserver/code-server:version-v3.11.0
 
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 
 RUN apt-get install htop vim tmux -y
 
