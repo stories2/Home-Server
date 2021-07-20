@@ -29,7 +29,6 @@ services:
     deploy:
         resources:
             limits:
-              cpus: 0.50
               memory: 512M
     container_name: code
     networks:
