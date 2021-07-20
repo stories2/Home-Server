@@ -2,7 +2,7 @@ html/
 well-known/
 vscode/projects/dist/
 letsencrypt/
-
+certbot/
 
 # Logs
 logs
