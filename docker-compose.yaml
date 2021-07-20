@@ -24,3 +24,10 @@ services:
         options:
             max-file: "5"
             max-size: "10m"
+  certbot:
+    image: certbot/certbot:latest
+    command: certonly --noninteractive --agree-tos -d rasp.gapmoe.net --register-unsafely-without-email --webroot -w /usr/share/nginx/well-known/
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/logs:/var/log/letsencrypt
+      - ./certbot/data:/var/www/certbot
