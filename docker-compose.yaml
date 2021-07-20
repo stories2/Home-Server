@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  kws0_net:
+    driver: bridge
+
+services:
+  nginx:
+    networks:
+      - kws0_net
+    build: ./nginx
+    restart: always
+    image: nginx_cust
+    volumes:
+      - ./html:/usr/share/nginx/html/
+      - ./well-known:/usr/share/nginx/well-known
+      - ./vscode/projects/dist:/usr/share/nginx/html/vscode
+      - ./letsencrypt:/etc/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"
+    logging:
+        driver: "json-file"
+        options:
+            max-file: "5"
+            max-size: "10m"
