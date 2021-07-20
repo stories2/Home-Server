@@ -25,16 +25,14 @@ services:
             max-file: "5"
             max-size: "10m"
   codeserver:
-    image: codercom/code-server:3.10.1
+    image: linuxserver/code-server:version-v3.11.0
     container_name: code
     networks:
       - rasp_net  
     restart: always
     user: root
     volumes:
-      #- ./vscode/.config:/home/coder/.config
-      - ./vscode/projects:/home/coder/project
-      - ./vscode/share:/home/coder/.local/share/code-server
+      - ./vscode/config:/config
 #      - ./vscode/data:/data
 #        If u use https://github.com/jwilder/nginx-proxy (recommended)
     environment:
