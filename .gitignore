@@ -1,3 +1,9 @@
+html/
+well-known/
+vscode/projects/dist/
+letsencrypt/
+
+
 # Logs
 logs
 *.log
