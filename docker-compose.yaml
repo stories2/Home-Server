@@ -25,7 +25,8 @@ services:
             max-file: "5"
             max-size: "10m"
   codeserver:
-    image: linuxserver/code-server:version-v3.11.0
+    image: code_server_cust
+    build: ./codeserver
     deploy:
         resources:
             limits:
