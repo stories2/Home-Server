@@ -24,3 +24,19 @@ services:
         options:
             max-file: "5"
             max-size: "10m"
+  codeserver:
+    image: codercom/code-server:3.10.1
+    container_name: code
+    networks:
+      - rasp_net  
+    restart: always
+    user: coder
+    volumes:
+      #- ./vscode/.config:/home/coder/.config
+      - ./vscode/projects:/home/coder/project
+      - ./vscode/share:/home/coder/.local/share/code-server
+#      - ./vscode/data:/data
+#        If u use https://github.com/jwilder/nginx-proxy (recommended)
+    environment:
+      VIRTUAL_HOST: rasp.gapmoe.net
+      VIRTUAL_PORT: 8443
