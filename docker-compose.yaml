@@ -15,7 +15,7 @@ services:
       - ./html:/usr/share/nginx/html/
       - ./well-known:/usr/share/nginx/well-known
       - ./vscode/projects/dist:/usr/share/nginx/html/vscode
-      - ./letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
     ports:
       - "80:80"
       - "443:443"
