@@ -30,7 +30,7 @@ services:
     networks:
       - rasp_net  
     restart: always
-    user: coder
+    user: root
     volumes:
       #- ./vscode/.config:/home/coder/.config
       - ./vscode/projects:/home/coder/project
