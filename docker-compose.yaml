@@ -25,6 +25,8 @@ services:
             max-file: "5"
             max-size: "10m"
   certbot:
+    depends_on:
+      - nginx
     networks:
       - rasp_net
     image: certbot/certbot:v1.17.0
